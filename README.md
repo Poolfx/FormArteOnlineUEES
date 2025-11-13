@@ -1,8 +1,13 @@
-<!-- ...existing code... -->
+# Grupo
+Paul Torres
+Monica Bueno
+Maria Jose Veliz
+Cristian Mejia
 
 # FormArteOnline
 
-Pequeño sitio web estático para una plataforma educativa ficticia llamada FormArteOnline. Contiene páginas de inicio, nosotros, contacto y conocenos, así como estilos responsivos.
+Pequeño sitio web estático para una plataforma educativa y formación profesional llamada FormArteOnline. Contiene páginas de inicio, nosotros, contacto y conocenos, así como estilos responsivos.
+
 
 ## Estructura del proyecto
 
@@ -13,11 +18,11 @@ Pequeño sitio web estático para una plataforma educativa ficticia llamada Form
 - [style-responsive.css](style-responsive.css) — Estilos principales y responsivos.
 - [.vscode/settings.json](.vscode/settings.json) — Configuración local del Live Server (puerto).
 - [img/](img/) — Imágenes generales.
-- [img-conocenos/](img-conocenos/) — Fotos del equipo.
+- [img/conocenos/](img/conocenos/) — Fotos del equipo.
 
 ## Clases y componentes importantes
 
-- Diseño del hero: [` .hero-contenido `](style-responsive.css)
+- Diseño general: [` .hero-contenido `](style-responsive.css)
 - Logo y cabecera: [` .logo `](style-responsive.css), [` .header-brand `](style-responsive.css)
 - Listado de cursos: [` .lista-cursos `](style-responsive.css)
 - Tarjetas de equipo: [` .card-persona `](style-responsive.css)
