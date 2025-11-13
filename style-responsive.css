@@ -87,7 +87,7 @@ section img {
 }
 
 /* ========================================
-   4. SECCIÓN HERO
+   4. SECCIÓN INICIO
    ======================================== */
 .hero-contenido {
   display: flex;
@@ -197,7 +197,7 @@ form input, form textarea {
 }
 
 /* ========================================
-   7. LISTAS Y VALORES
+   7. LISTAS
    ======================================== */
 .lista-cursos {
   display: flex;
@@ -372,59 +372,6 @@ form input, form textarea {
 }
 
 /* ========================================
-   📱 RESPONSIVE
-   ======================================== */
-
-@media (max-width: 768px) {
-  .grid-equipo {
-    gap: 25px;
-  }
-
-  .card-persona {
-    flex: 1 1 45%;
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-equipo {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .card-persona {
-    width: 90%;
-    max-width: 320px;
-    padding: 20px;
-  }
-
-  .foto-equipo {
-    height: auto; /* Deja que la imagen se adapte al ancho */
-    object-fit: contain; /* Evita recortar las caras */
-  }
-
-  .card-persona h4 {
-    font-size: 1.1rem;
-  }
-
-  .rol {
-    font-size: 1rem;
-    color: #666;
-  }
-
-  .hero h2 {
-    font-size: 1.4rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-    padding: 0 15px;
-  }
-}
-
-
-/* ========================================
    10. FOOTER
    ======================================== */
 footer {
@@ -535,5 +482,53 @@ footer {
   .lista-cursos li {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-equipo {
+    gap: 25px;
+  }
+
+  .card-persona {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-equipo {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card-persona {
+    width: 90%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .foto-equipo {
+    height: auto; /* Deja que la imagen se adapte al ancho */
+    object-fit: contain; /* Evita recortar las caras */
+  }
+
+  .card-persona h4 {
+    font-size: 1.1rem;
+  }
+
+  .rol {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .hero h2 {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+    padding: 0 15px;
   }
 }
