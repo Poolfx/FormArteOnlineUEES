@@ -1,8 +1,8 @@
 # Grupo
-Paul Torres
-Monica Bueno
-Maria Jose Veliz
-Cristian Mejia
+- Paul Torres
+- Monica Bueno
+- Maria Jose Veliz
+- Cristian Mejia
 
 # FormArteOnline
 
