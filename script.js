@@ -57,6 +57,11 @@ if (formContacto) {
   formContacto.addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar recarga
 
+    const nombre = formContacto.value.trim();
+    const email = formContacto.value.trim();
+    const asunto = formContacto.value.trim();
+    const mensaje = formContacto.value.trim();
+
     // Ocultar formulario (opcional)
     formContacto.classList.add('hidden');
 
