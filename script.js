@@ -41,7 +41,7 @@ if (form) {
     setTimeout(() => {
       mensajeBusqueda.textContent = `No se encontraron resultados para "${valor}".`;
       inputBusqueda.value = '';
-    }, 1500);
+    }, 2500);
   });
 }
 
@@ -62,7 +62,7 @@ if (formContacto) {
 
     // Mostrar mensaje de envío simulado
     mensajeContacto.classList.remove('hidden');
-    mensajeContacto.textContent = '¡Tu información ha sido enviada correctamente! (Simulación)';
+    mensajeContacto.textContent = '¡Tu información ha sido enviada correctamente!';
 
     // Resetear y restaurar después de 1.5 segundos
     setTimeout(() => {
@@ -70,6 +70,6 @@ if (formContacto) {
       formContacto.classList.remove('hidden');
       mensajeContacto.classList.add('hidden');
       mensajeContacto.textContent = '';
-    }, 1500);
+    }, 5500);
   });
 }
