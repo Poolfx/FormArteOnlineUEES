@@ -5,6 +5,8 @@ const form = document.querySelector('#form-busqueda');
 const inputBusqueda = document.querySelector('#input-busqueda');
 const mensajeBusqueda = document.querySelector('#mensaje-busqueda');
 const contenidoPrincipal = document.querySelector('#contenido-principal');
+const formContacto = document.querySelector('#form-contacto');
+const mensajeContacto = document.querySelector('#mensaje-contacto');
 
 // ---------------------------------------------
 // FUNCIÓN DE LIMPIEZA (BÚSQUEDA)
@@ -49,9 +51,6 @@ if (form) {
 // =========================================================
 // FORMULARIO DE CONTACTO
 // =========================================================
-
-const formContacto = document.querySelector('#form-contacto');
-const mensajeContacto = document.querySelector('#mensaje-contacto');
 
 if (formContacto) {
   formContacto.addEventListener('submit', function(event) {
