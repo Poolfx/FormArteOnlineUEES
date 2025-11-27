@@ -20,6 +20,11 @@ body {
   color: #333;
 }
 
+/* Clase utilitaria para ocultar elementos con JavaScript */
+.hidden {
+  display: none;
+}
+
 /* ========================================
    2. HEADER Y NAVEGACIÓN
    ======================================== */
@@ -87,7 +92,7 @@ section img {
 }
 
 /* ========================================
-   4. SECCIÓN INICIO
+   4. SECCIÓN INICIO / HERO
    ======================================== */
 .hero-contenido {
   display: flex;
@@ -163,7 +168,7 @@ button:hover {
 }
 
 /* ========================================
-   6. FORMULARIOS
+   6. FORMULARIOS (GENÉRICOS)
    ======================================== */
 form {
   display: flex;
@@ -178,7 +183,8 @@ form label {
   font-weight: bold;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   width: 100%;
   padding: 8px;
   margin-top: 5px;
@@ -197,7 +203,56 @@ form input, form textarea {
 }
 
 /* ========================================
-   7. LISTAS
+   7. FORMULARIO CONTACTO ESPECÍFICO
+   (por si usas class="form-contacto" en contacto.html)
+   ======================================== */
+.form-contacto {
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ========================================
+   8. BUSCADOR (INDEX)
+   ======================================== */
+.buscador {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  text-align: left;
+}
+
+.buscador h3 {
+  margin-bottom: 10px;
+}
+
+.buscador form {
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.buscador label {
+  align-self: flex-start;
+}
+
+.buscador input {
+  padding: 8px 10px;
+}
+
+.buscador button {
+  align-self: flex-start;
+}
+
+#mensaje-busqueda {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ========================================
+   9. LISTAS
    ======================================== */
 .lista-cursos {
   display: flex;
@@ -264,7 +319,7 @@ form input, form textarea {
 }
 
 /* ========================================
-   8. SECCIÓN NOSOTROS
+   10. SECCIÓN NOSOTROS
    ======================================== */
 .sobre-nosotros {
   text-align: left;
@@ -298,9 +353,8 @@ form input, form textarea {
 }
 
 /* ========================================
-   9. SECCIÓN EQUIPO (CONOCENOS)
+   11. SECCIÓN EQUIPO (CONÓCENOS)
    ======================================== */
-
 .hero {
   text-align: center;
   margin-bottom: 40px;
@@ -372,7 +426,7 @@ form input, form textarea {
 }
 
 /* ========================================
-   10. FOOTER
+   12. FOOTER
    ======================================== */
 footer {
   display: flex;
@@ -387,7 +441,7 @@ footer {
 }
 
 /* ========================================
-   11. MEDIA QUERIES - RESPONSIVIDAD
+   13. MEDIA QUERIES - RESPONSIVIDAD
    ======================================== */
 @media (max-width: 720px) {
   header {
