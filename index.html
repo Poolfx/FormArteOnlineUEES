@@ -14,7 +14,7 @@
     </div>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html" class="activo">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="conocenos.html">Conócenos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
@@ -23,15 +23,15 @@
   </header>
 
   <main>
-    <!-- Contenido principal que se ocultará al buscar -->
+
+    <!-- Contenido principal -->
     <div id="contenido-principal">
       <section class="hero">
         <div class="hero-contenido">
           <div class="hero-texto">
             <h2>Aprende sin límites, crece a tu ritmo</h2>
             <p>
-              En <strong>FormArteOnline</strong> te conectamos con cursos diseñados para impulsar tu desarrollo
-              profesional y personal, desde cualquier lugar del mundo.
+              En <strong>FormArteOnline</strong> te conectamos con cursos diseñados para impulsar tu desarrollo personal y profesional.
             </p>
             <a href="nosotros.html" class="btn-primario">Conoce más</a>
           </div>
@@ -51,7 +51,7 @@
       </section>
     </div>
 
-    <!-- Buscador conectado con script.js -->
+    <!-- Buscador -->
     <section class="buscador">
       <h3>Busca un curso</h3>
       <form id="form-busqueda">
@@ -66,9 +66,12 @@
         <button type="submit">Buscar</button>
       </form>
 
-      <!-- Mensaje dinámico que se actualiza con JavaScript -->
       <p id="mensaje-busqueda" class="hidden"></p>
     </section>
+
+    <!-- RESULTADOS -->
+    <div id="resultados" class="resultados hidden"></div>
+
   </main>
 
   <footer>

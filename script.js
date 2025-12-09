@@ -1,79 +1,170 @@
-// ---------------------------------------------
-// SELECCIÓN DE ELEMENTOS (FORMULARIO DE BÚSQUEDA)
-// ---------------------------------------------
+// =========================================================
+// ELEMENTOS DEL DOM
+// =========================================================
 const form = document.querySelector('#form-busqueda');
 const inputBusqueda = document.querySelector('#input-busqueda');
 const mensajeBusqueda = document.querySelector('#mensaje-busqueda');
 const contenidoPrincipal = document.querySelector('#contenido-principal');
+const resultados = document.querySelector('#resultados');
+
+// FORMULARIO DE CONTACTO
 const formContacto = document.querySelector('#form-contacto');
 const mensajeContacto = document.querySelector('#mensaje-contacto');
 
-// ---------------------------------------------
-// FUNCIÓN DE LIMPIEZA (BÚSQUEDA)
-// ---------------------------------------------
-function limpiarBusqueda() {
-  if (inputBusqueda) inputBusqueda.value = '';
-  if (mensajeBusqueda) mensajeBusqueda.textContent = '';
+// =========================================================
+// API
+// =========================================================
+const API_URL = "https://api.sampleapis.com/codingresources/codingResources";
+
+// =========================================================
+// FUNCION PRINCIPAL DE BUSQUEDA
+// =========================================================
+async function buscarCursos(termino) {
+
+  console.log("Funcion buscarCursos iniciada. Termino buscado:", termino);
+
+  try {
+    mensajeBusqueda.textContent =
+      'Buscando informacion sobre "' + termino + '"...';
+
+    console.log("Realizando fetch a:", API_URL);
+
+    const response = await fetch(API_URL);
+
+    console.log("Respuesta HTTP recibida:", response);
+
+    if (!response.ok) {
+      console.error("Respuesta no valida. Codigo HTTP:", response.status);
+      throw new Error("No se pudo obtener informacion de la API");
+    }
+
+    const data = await response.json();
+
+    console.log("Datos recibidos:", data);
+
+    const filtrados = data.filter(item => {
+
+      const titulo = item.title ? item.title.toLowerCase() : "";
+      const descripcion = item.description ? item.description.toLowerCase() : "";
+      const topics = Array.isArray(item.topics)
+        ? item.topics.map(t => t.toLowerCase())
+        : [];
+
+      return (
+        titulo.includes(termino.toLowerCase()) ||
+        descripcion.includes(termino.toLowerCase()) ||
+        topics.some(t => t.includes(termino.toLowerCase()))
+      );
+    });
+
+    console.log("Resultados filtrados:", filtrados);
+
+    renderResultados(filtrados, termino);
+
+  } catch (error) {
+
+    console.error("Error en buscarCursos:", error);
+
+    mensajeBusqueda.textContent = "Hubo un error al realizar la busqueda.";
+    resultados.innerHTML = "";
+  }
 }
 
-// ---------------------------------------------
-// ESCUCHADOR DEL FORMULARIO DE BÚSQUEDA
-// ---------------------------------------------
+// =========================================================
+// RENDERIZADO DE RESULTADOS
+// =========================================================
+function renderResultados(lista, termino) {
+
+  console.log("Renderizando resultados. Total:", lista.length);
+
+  resultados.classList.remove("hidden");
+
+  if (lista.length === 0) {
+    resultados.innerHTML =
+      '<p>No se encontraron resultados para "' + termino + '".</p>';
+    return;
+  }
+
+  resultados.innerHTML = lista
+    .map(item => {
+
+      const description = item.description || "Sin descripcion disponible.";
+      const topics = Array.isArray(item.topics)
+        ? item.topics.join(", ")
+        : "No especificado";
+      const url = item.url || "#";
+
+      return `
+        <div class="card-resultado-simple">
+          <p>${description}</p>
+          <p><strong>Temas:</strong> ${topics}</p>
+          <a href="${url}" target="_blank" class="link-recurso">Ver recurso</a>
+        </div>
+      `;
+    })
+    .join("");
+
+  console.log("Resultados renderizados correctamente.");
+}
+
+// =========================================================
+// EVENTO: BUSQUEDA
+// =========================================================
 if (form) {
   form.addEventListener('submit', function (event) {
-    event.preventDefault(); // evita recarga
 
-    if (!inputBusqueda || !mensajeBusqueda || !contenidoPrincipal) return;
+    console.log("Submit detectado en formulario de busqueda.");
+
+    event.preventDefault();
 
     const valor = inputBusqueda.value.trim();
 
-    if (valor === '') {
-      alert('Por favor escribe algo para buscar.');
+    console.log("Valor ingresado:", valor);
+
+    if (valor === "") {
+      alert("Por favor escribe algo para buscar.");
       return;
     }
 
-    // Ocultar contenido principal
-    contenidoPrincipal.classList.add('hidden');
+    contenidoPrincipal.classList.add("hidden");
+    mensajeBusqueda.classList.remove("hidden");
+    resultados.innerHTML = "";
 
-    // Mostrar mensaje dinámico
-    mensajeBusqueda.classList.remove('hidden');
-    mensajeBusqueda.textContent = `Buscando información de "${valor}"...`;
-
-    // Simulación de búsqueda
-    setTimeout(() => {
-      mensajeBusqueda.textContent = `No se encontraron resultados para "${valor}".`;
-      inputBusqueda.value = '';
-    }, 2500);
+    buscarCursos(valor);
   });
 }
 
-
 // =========================================================
-// FORMULARIO DE CONTACTO
+// EVENTO: CONTACTO
 // =========================================================
-
 if (formContacto) {
-  formContacto.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar recarga
 
-    const nombre = formContacto.value.trim();
-    const email = formContacto.value.trim();
-    const asunto = formContacto.value.trim();
-    const mensaje = formContacto.value.trim();
+  console.log("Formulario de contacto detectado.");
 
-    // Ocultar formulario (opcional)
-    formContacto.classList.add('hidden');
+  formContacto.addEventListener('submit', function (event) {
 
-    // Mostrar mensaje de envío simulado
-    mensajeContacto.classList.remove('hidden');
-    mensajeContacto.textContent = '¡Tu información ha sido enviada correctamente!';
+    event.preventDefault();
 
-    // Resetear y restaurar después de 1.5 segundos
-    setTimeout(() => {
+    const nombre = document.querySelector("#nombre").value;
+    const email = document.querySelector("#email").value;
+    const asunto = document.querySelector("#asunto").value;
+    const mensaje = document.querySelector("#mensaje").value;
+
+    console.log("Datos del formulario:", { nombre, email, asunto, mensaje });
+
+    if (!nombre || !email || !asunto || !mensaje) {
+      alert("Completa todos los campos.");
+      return;
+    }
+
+    formContacto.classList.add("hidden");
+    mensajeContacto.classList.remove("hidden");
+    mensajeContacto.textContent = "Tu mensaje fue enviado correctamente.";
+
+    setTimeout(function () {
       formContacto.reset();
-      formContacto.classList.remove('hidden');
-      mensajeContacto.classList.add('hidden');
-      mensajeContacto.textContent = '';
-    }, 5500);
+      formContacto.classList.remove("hidden");
+      mensajeContacto.classList.add("hidden");
+    }, 4000);
   });
 }

@@ -1,8 +1,6 @@
-/* style-responsive.css: Estilos responsivos del proyecto FormArteOnline */
-
 /* ========================================
-   1. RESET Y ESTILOS BASE
-   ======================================== */
+   RESET Y ESTILOS BASE
+======================================== */
 * {
   box-sizing: border-box;
 }
@@ -20,14 +18,14 @@ body {
   color: #333;
 }
 
-/* Clase utilitaria para ocultar elementos con JavaScript */
+/* Clase utilitaria */
 .hidden {
   display: none;
 }
 
 /* ========================================
-   2. HEADER Y NAVEGACIÓN
-   ======================================== */
+   HEADER Y NAVEGACION
+======================================== */
 header {
   display: flex;
   align-items: center;
@@ -47,20 +45,14 @@ header {
 .logo {
   width: 140px;
   max-width: 30%;
-  height: auto;
 }
 
 nav ul {
   display: flex;
   gap: 16px;
-  align-items: center;
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-nav ul li {
-  display: block;
 }
 
 nav a {
@@ -69,14 +61,14 @@ nav a {
   font-weight: bold;
 }
 
-nav a.activo,
-nav a:hover {
+nav a:hover,
+nav a.activo {
   text-decoration: underline;
 }
 
 /* ========================================
-   3. MAIN Y SECCIONES
-   ======================================== */
+   MAIN
+======================================== */
 main {
   padding: 20px;
   text-align: center;
@@ -86,14 +78,9 @@ section {
   margin-bottom: 30px;
 }
 
-section img {
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
 /* ========================================
-   4. SECCIÓN INICIO / HERO
-   ======================================== */
+   HERO
+======================================== */
 .hero-contenido {
   display: flex;
   gap: 30px;
@@ -118,26 +105,17 @@ section img {
 .hero-texto p {
   font-size: 1.1em;
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .hero-imagen {
   flex: 1 1 380px;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-.hero-imagen img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  border-radius: 10px;
 }
 
 /* ========================================
-   5. BOTONES
-   ======================================== */
+   BOTONES
+======================================== */
 .btn-primario {
   display: inline-block;
   background-color: #0056b3;
@@ -146,11 +124,29 @@ section img {
   padding: 12px 25px;
   border-radius: 6px;
   font-weight: bold;
-  transition: background-color 0.3s;
 }
 
 .btn-primario:hover {
   background-color: #003f80;
+}
+
+/* ========================================
+   FORMULARIOS
+======================================== */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
 }
 
 button {
@@ -168,82 +164,16 @@ button:hover {
 }
 
 /* ========================================
-   6. FORMULARIOS (GENÉRICOS)
-   ======================================== */
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-form label {
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-row {
-  display: flex;
-  gap: 12px;
-  width: 100%;
-}
-
-.form-field {
-  flex: 1 1 0;
-}
-
-/* ========================================
-   7. FORMULARIO CONTACTO ESPECÍFICO
-   (por si usas class="form-contacto" en contacto.html)
-   ======================================== */
-.form-contacto {
-  max-width: 500px;
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-/* ========================================
-   8. BUSCADOR (INDEX)
-   ======================================== */
+   BUSCADOR
+======================================== */
 .buscador {
   padding: 16px;
   border-radius: 8px;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
   max-width: 600px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 30px;
   text-align: left;
-}
-
-.buscador h3 {
-  margin-bottom: 10px;
-}
-
-.buscador form {
-  align-items: stretch;
-  max-width: 100%;
-}
-
-.buscador label {
-  align-self: flex-start;
-}
-
-.buscador input {
-  padding: 8px 10px;
-}
-
-.buscador button {
-  align-self: flex-start;
 }
 
 #mensaje-busqueda {
@@ -252,134 +182,30 @@ form textarea {
 }
 
 /* ========================================
-   9. LISTAS
-   ======================================== */
+   LISTA DE CURSOS
+======================================== */
 .lista-cursos {
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
-  margin: 0 auto;
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .lista-cursos li {
   list-style: none;
   flex: 1 1 240px;
-  max-width: 320px;
-  box-sizing: border-box;
-  padding: 12px 15px;
   background: #f0f4ff;
   border-left: 4px solid #0056b3;
   border-radius: 6px;
-  margin: 0;
-}
-
-.valores {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.valores ul {
-  list-style: none;
-  padding: 0;
-}
-
-.valores li {
-  background: #f0f4ff;
-  border-left: 4px solid #0056b3;
   padding: 12px 15px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-}
-
-.grid-valores {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0;
-  margin: 0 auto;
-  max-width: 900px;
-}
-
-.valor {
-  list-style: none;
-  flex: 1 1 200px;
-  max-width: 250px;
-  box-sizing: border-box;
-  padding: 12px 15px;
-  background: #f0f4ff;
-  border-left: 4px solid #0056b3;
-  border-radius: 6px;
-  margin: 0;
-  font-weight: bold;
 }
 
 /* ========================================
-   10. SECCIÓN NOSOTROS
-   ======================================== */
-.sobre-nosotros {
-  text-align: left;
-  max-width: 1000px;
-  margin: 0 auto 50px auto;
-}
-
-.contenido-nosotros {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 20px;
-}
-
-.texto-nosotros {
-  flex: 1 1 55%;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.imagen-nosotros {
-  flex: 1 1 40%;
-  text-align: center;
-}
-
-.imagen-nosotros img {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* ========================================
-   11. SECCIÓN EQUIPO (CONÓCENOS)
-   ======================================== */
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.hero h2 {
-  font-size: 1.8em;
-  color: #0056b3;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  font-size: 1em;
-  color: #444;
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-.equipo {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
+   TARJETAS DEL EQUIPO
+======================================== */
 .grid-equipo {
   display: flex;
   gap: 20px;
@@ -392,16 +218,8 @@ form textarea {
   max-width: 220px;
   background: #fff;
   border-radius: 12px;
-  overflow: hidden;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
   padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-persona:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .foto-equipo {
@@ -409,180 +227,91 @@ form textarea {
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.card-persona h4 {
-  color: #0056b3;
-  margin: 8px 0 4px;
-  font-size: 1.1em;
-}
-
-.rol {
-  color: #555;
-  font-weight: bold;
-  font-size: 0.95em;
-  margin-bottom: 10px;
 }
 
 /* ========================================
-   12. FOOTER
-   ======================================== */
+   FOOTER
+======================================== */
 footer {
   display: flex;
-  gap: 12px;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding: 15px 20px;
   background-color: #222;
   color: white;
   font-size: 0.9em;
+  flex-wrap: wrap;
 }
 
 /* ========================================
-   13. MEDIA QUERIES - RESPONSIVIDAD
-   ======================================== */
-@media (max-width: 720px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  nav ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
+   GRID DE RESULTADOS SIN IMAGEN
+======================================== */
+.resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  text-align: left;
 }
 
-@media (max-width: 700px) {
-  .form-row {
-    flex-direction: column;
-  }
+.card-resultado-simple {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-left: 4px solid #0056b3;
+}
 
+.card-resultado-simple h4 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #0056b3;
+}
+
+.card-resultado-simple p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+}
+
+.link-recurso {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.link-recurso:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   MEDIA QUERIES
+======================================== */
+@media (max-width: 700px) {
   .hero-contenido {
     flex-direction: column;
   }
-
   .grid-equipo {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .card-persona {
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  footer {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contenido-nosotros {
-    flex-direction: column;
-  }
-
-  .texto-nosotros {
-    flex: 1 1 100%;
-  }
-
-  .imagen-nosotros {
-    flex: 1 1 100%;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
     width: 100px;
-    max-width: 40%;
-  }
-
-  .header-brand h1 {
-    font-size: 1.1rem;
-    margin: 0;
   }
 
   nav ul {
+    flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
-  }
-
-  .hero-texto h2 {
-    font-size: 1.4rem;
-  }
-
-  .hero-texto p {
-    font-size: 1rem;
-  }
-
-  .imagen-nosotros img,
-  .hero-imagen img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .grid-valores {
-    flex-direction: column;
-  }
-
-  .valor {
-    flex: 1 1 100%;
-  }
-
-  .lista-cursos li {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid-equipo {
-    gap: 25px;
-  }
-
-  .card-persona {
-    flex: 1 1 45%;
-    max-width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-equipo {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
   }
 
   .card-persona {
     width: 90%;
-    max-width: 320px;
-    padding: 20px;
   }
 
-  .foto-equipo {
-    height: auto; /* Deja que la imagen se adapte al ancho */
-    object-fit: contain; /* Evita recortar las caras */
-  }
-
-  .card-persona h4 {
-    font-size: 1.1rem;
-  }
-
-  .rol {
-    font-size: 1rem;
-    color: #666;
-  }
-
-  .hero h2 {
-    font-size: 1.4rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-    padding: 0 15px;
+  .card-resultado-simple {
+    padding: 18px;
   }
 }
